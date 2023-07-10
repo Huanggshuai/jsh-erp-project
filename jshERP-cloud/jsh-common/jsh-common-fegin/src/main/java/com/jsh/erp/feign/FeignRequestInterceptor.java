@@ -18,6 +18,7 @@ public class FeignRequestInterceptor implements RequestInterceptor {
             if (requestAttributes != null) {
                 HttpServletRequest request = ((ServletRequestAttributes) requestAttributes).getRequest();
                 String token = request.getHeader("X-Access-Token");
+
                 if(StringUtils.hasText(token)) {
                     requestTemplate.header("X-Access-Token", token);
                 }
